@@ -20,7 +20,18 @@ namespace GrafFeladat_CSharp
             graf.Hozzaad(4, 5);
             graf.Hozzaad(2, 4);
 
-            Console.WriteLine(graf);
+            Console.WriteLine("szélességi bejárás 0 kezdőpontból:");
+            graf.szelessegiBejar(0);
+            Console.WriteLine("mélységi bejárás 0 kezdőpontból:");
+            graf.melysegiBejar(0);
+            Console.WriteLine("gráf összefüggősége: "+graf.Osszefuggo());
+            Console.WriteLine("gráf feszítőfája:");
+            Console.WriteLine(graf.feszitofa().ToString());
+            Console.WriteLine("a mohó algoritmus csúcs színezései:");
+            foreach (int i in graf.MohoSzinezes().Keys)
+            {
+                Console.WriteLine("csúcs: " + i + ", szín:" + graf.MohoSzinezes()[i]);
+            }
             Console.ReadLine();
         }
     }
